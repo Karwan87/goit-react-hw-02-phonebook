@@ -14,6 +14,10 @@ const ContactForm = ({ addContact, contacts }) => {
       alert(`${name} is already in contacts!`);
       return;
     }
+    if (name.trim() === '' || number.trim() === '') {
+      alert(`${name} Cannot add an empty result!`);
+      return;
+    }
 
     addContact(name, number);
     setName('');
